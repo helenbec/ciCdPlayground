@@ -9,8 +9,8 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/helenbec/ciCdPlayground.git'
-                yarn
-                yarn build
+                sh 'yarn'
+                sh 'yarn build'
             }
             stage('Test') {
                 steps {
@@ -18,7 +18,7 @@ pipeline {
                     sh 'yarn test:e2e'
                 }
             }
-            stage('Deploy') {
+            stage('Results') {
                 steps {
                     junit 'reports/*.xml'
                 }
