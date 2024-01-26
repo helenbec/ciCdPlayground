@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="2" failures="0" errors="0" time="0.814">
+  <testsuite name="src/list.spec.js" errors="0" failures="0" skipped="0" timestamp="2024-01-26T09:17:14" time="0.352" tests="2">
+    <testcase classname="list" name="shows content as paragraph if it is a string" time="0.012">
+    </testcase>
+    <testcase classname="list" name="shows content as list if it is an array" time="0.007">
+    </testcase>
+  </testsuite>
+</testsuites>
