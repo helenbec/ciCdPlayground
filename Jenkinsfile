@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git checkout https://github.com/helenbec/ciCdPlayground.git
+                git checkout 'https://github.com/helenbec/ciCdPlayground.git'
                 yarn
                 yarn build
             }
@@ -20,7 +20,7 @@ pipeline {
             }
             stage('Deploy') {
                 steps {
-                junit 'reports/*.xml'
+                    junit 'reports/*.xml'
                 }
             }
         }
