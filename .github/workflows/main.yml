@@ -6,36 +6,36 @@ on:
   workflow_dispatch:
   
 
-  jobs:  
-    pipeline:
-      runs_on: ubuntu-latest
-      steps:
-        - name: Set Node.js 20.x
-          uses: actions/setup-node@v3
-          with:
-            node-version: 20.x
-            
-        - name: Checkout
-          uses: actions/checkout@v4
-
-        - name: Run install
-          uses: borales/actions-yarn@v4
-          with:
-            cmd: install
+jobs:  
+  pipeline:
+    runs_on: ubuntu-latest
+    steps:
+      - name: Set Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
           
-        - name: Test the app
-          uses: borales/actions-yarn@v4
-          with:
-            cmd: test
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        - name: e2e test
-          uses: borales/actions-yarn@v4
-          with:
-            cmd: test:e2e
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+        
+      - name: Test the app
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test
 
-        - name: Publish junit test results
-          uses: mikepenz/action-junit-report@v4
-          if: success() || failure()
-          with:
-            reports-path: 'reports/*.xml'
+      - name: e2e test
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test:e2e
+
+      - name: Publish junit test results
+        uses: mikepenz/action-junit-report@v4
+        if: success() || failure()
+        with:
+          reports-path: 'reports/*.xml'
               
