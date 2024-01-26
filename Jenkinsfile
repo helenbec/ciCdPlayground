@@ -8,14 +8,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git checkout 'https://github.com/helenbec/ciCdPlayground.git'
+                git 'https://github.com/helenbec/ciCdPlayground.git'
                 yarn
                 yarn build
             }
             stage('Test') {
                 steps {
-                    yarn test
-                    yarn test:e2e
+                    sh 'yarn test'
+                    sh 'yarn test:e2e'
                 }
             }
             stage('Deploy') {
