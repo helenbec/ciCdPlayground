@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/helenbec/ciCdPlayground.git'
+                    url: 'https://github.com/helenbec/ciCdPlayground'
             }
         }
         stage('Build') {
