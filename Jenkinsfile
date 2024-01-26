@@ -6,12 +6,12 @@ pipeline {
     }
 
     stages {
-    stage {
-        steps {
-            git branch: 'main',
-                url: 'https://github.com/helenbec/ciCdPlayground.git'
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/helenbec/ciCdPlayground.git'
+            }
         }
-    }
         stage('Build') {
             steps {
                 sh 'yarn'
