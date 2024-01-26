@@ -6,9 +6,14 @@ pipeline {
     }
 
     stages {
+    stage {
+        steps {
+            git branch: 'main',
+                url: 'https://github.com/helenbec/ciCdPlayground.git'
+        }
+    }
         stage('Build') {
             steps {
-                git 'https://github.com/helenbec/ciCdPlayground.git'
                 sh 'yarn'
                 sh 'yarn build'
             }
