@@ -37,5 +37,5 @@ on:
           uses: mikepenz/action-junit-report@v4
           if: success() || failure()
           with:
-            reports-path: reports/*.xml
+            reports-path: 'reports/*.xml'
               
