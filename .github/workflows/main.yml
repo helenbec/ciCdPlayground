@@ -35,7 +35,7 @@ on:
 
         - name: Publish junit test results
           uses: mikepenz/action-junit-report@v4
-          if: success() || failure4()
+          if: success() || failure()
           with:
             reports-path: reports/*.xml
               
